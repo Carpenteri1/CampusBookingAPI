@@ -28,8 +28,6 @@ Students should have the ability to give feedback on what tools they want to hav
 - .Net core 3.1
 - Dotnet Core API Templet
 - C#
-- Javascript
-- Jquery
 - AspNet
 - AdoNet
 - Mysql
