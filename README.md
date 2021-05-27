@@ -1,4 +1,4 @@
-# Campus Booking API
+# Campus Booking restful - API
 
 
 ## About
