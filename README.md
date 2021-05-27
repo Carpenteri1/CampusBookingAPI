@@ -14,7 +14,6 @@ The course ends by showing the results of the project to campus.
 -  post
 -  put
 -  delete 
--  data
 
 ## Goal
 Make an updated concept for there current booking system. 
