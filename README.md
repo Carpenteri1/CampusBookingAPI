@@ -9,7 +9,7 @@ Iv hade meetings with the staff and gathered suggestions and feedback on what th
 The meeting have been done via teams and mail do to the current corona pandemic. 
 The course ends by showing the results of the project to campus.
 
-#### This project is an API where the client project can call the API
+#### This project is an API where the [client project](https://github.com/Carpenteri1/CampusBookingConcept) can call the API
 -  get
 -  post
 -  put
