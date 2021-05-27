@@ -26,7 +26,7 @@ Students should have the ability to give feedback on what tools they want to hav
 ## Built with
 
 - .Net core 3.1
-- MVC API
+- Dotnet Core API Templet
 - C#
 - Javascript
 - Jquery
