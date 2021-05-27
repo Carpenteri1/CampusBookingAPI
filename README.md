@@ -41,6 +41,7 @@ Students should have the ability to give feedback on what tools they want to hav
 
 ### Project planning
 - [Progress](https://github.com/users/Carpenteri1/projects/7) - (More cards will be added)
+- [Client Project](https://github.com/Carpenteri1/CampusBookingConcept)
 
 
 ### Assets are from
