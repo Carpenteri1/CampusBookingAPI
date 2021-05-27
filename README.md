@@ -23,7 +23,7 @@ for example, tv, how many tables, pc's and so on.
 
 Students should have the ability to give feedback on what tools they want to have for the specific rooms, general comments and suggestions or feedback. I might add some kinde of voting system also.
 
-## Built on
+## Built with
 
 - .Net core 3.1
 - Blazor Server
