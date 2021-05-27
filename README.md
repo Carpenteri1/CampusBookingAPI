@@ -9,8 +9,12 @@ Iv hade meetings with the staff and gathered suggestions and feedback on what th
 The meeting have been done via teams and mail do to the current corona pandemic. 
 The course ends by showing the results of the project to campus.
 
-- This project is an API where the client project can call this project to get,post,put,delete data.
--  
+#### This project is an API where the client project can call the API
+-  get
+-  post
+-  put
+-  delete 
+-  data
 
 ## Goal
 Make an updated concept for there current booking system. 
@@ -32,6 +36,8 @@ Students should have the ability to give feedback on what tools they want to hav
 - Mysql
 - SQL
 - EntityFramework core
+- Postman
+- Swagger (might be added)
 
 ### Project planning
 - [Progress](https://github.com/users/Carpenteri1/projects/7) - (More cards will be added)
