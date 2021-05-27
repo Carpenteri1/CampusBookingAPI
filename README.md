@@ -37,6 +37,7 @@ Students should have the ability to give feedback on what tools they want to hav
 - SQL
 - EntityFramework core
 - Postman
+- Crud code
 - Swagger (might be added)
 
 ### Project planning
