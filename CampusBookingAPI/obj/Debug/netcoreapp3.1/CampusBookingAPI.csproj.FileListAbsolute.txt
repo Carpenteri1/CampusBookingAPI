@@ -6,7 +6,6 @@ C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcorea
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\CampusBookingAPI.runtimeconfig.dev.json
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\CampusBookingAPI.dll
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\CampusBookingAPI.pdb
-C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.csprojAssemblyReference.cache
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.AssemblyInfoInputs.cache
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.AssemblyInfo.cs
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.csproj.CoreCompileInputs.cache
@@ -32,3 +31,8 @@ C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcorea
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.csproj.CopyComplete
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.csprojAssemblyReference.cache
