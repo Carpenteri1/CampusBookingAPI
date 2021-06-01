@@ -31,23 +31,17 @@ namespace CampusBookingAPI.Controllers
         {
             return TestData.GetTestDataById(id);
         }*/
-
-        public IActionResult Post()
+        [HttpPost]
+        public IActionResult Post(TestData model)
         {
             try
-            {
-                return Ok();
+            { 
+               return Created($"/api/testdata/{model.className}",model);
             }
             catch (Exception e)
             {
                 return StatusCode(e.GetHashCode());
             }
-        }
-        [HttpPost]
-        [Route("{id}")]
-        public IActionResult Post(int id)
-        {
-            return Ok();
         }
              
     }

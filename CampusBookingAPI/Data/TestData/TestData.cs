@@ -7,6 +7,7 @@ namespace CampusBookingAPI.Data.TestData
 {
     public class TestData
     {
+        public int id { get; set; }
         public string className { get; set; }
         public string timeStart { get; set; }
         public string timeEnd { get; set; }
@@ -31,6 +32,7 @@ namespace CampusBookingAPI.Data.TestData
            {
                     new TestData
                     {
+                        id =1,
                         className = "sut-19",
                         timeStart = new DateTime(2021, 2, 22, 18, 30, 0).Hour + ":" + new DateTime(2021, 2, 22, 18, 30, 0).Minute,
                         timeEnd = new DateTime(2021, 2, 22, 20, 0, 0).Hour + ":" + new DateTime(2021, 2, 22, 20, 0, 0).Minute,
@@ -40,6 +42,7 @@ namespace CampusBookingAPI.Data.TestData
                     },
                     new TestData
                     {
+                      id =2,
                       className = "sut-20",
                       timeStart =  new DateTime(2021, 2, 23, 15, 0, 0).Hour + ":" + new DateTime(2021, 2, 23, 15, 0, 0).Minute,
                       timeEnd = new DateTime(2021, 2, 23, 17, 0, 0).Hour + ":" + new DateTime(2021, 2, 23, 17, 0, 0).Minute,
@@ -49,6 +52,7 @@ namespace CampusBookingAPI.Data.TestData
                     },
                     new TestData
                     {
+                        id = 3,
                         className = "sut-18",
                         timeStart = new DateTime(2021, 2, 25, 11, 0, 0).Hour + ":" + new DateTime(2021, 2, 25, 11, 0, 0).Minute,
                         timeEnd = new DateTime(2021, 2, 25, 14, 0, 0).Hour + ":" + new DateTime(2021, 2, 25, 14, 0, 0).Minute,

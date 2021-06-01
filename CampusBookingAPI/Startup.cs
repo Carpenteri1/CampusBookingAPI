@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CampusBookingAPI.DbContextMysql;
+using Microsoft.EntityFrameworkCore;
 
 namespace CampusBookingAPI
 {
@@ -27,6 +29,10 @@ namespace CampusBookingAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<CampusApiDbContext>(options =>
+           options.UseMySQL(
+           Configuration.GetConnectionString("LocalDB")));
+
             services.AddCors(options =>
             {
                 options.AddPolicy(name : corsPolicy,
