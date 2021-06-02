@@ -21,15 +21,27 @@ namespace CampusBookingAPI.Controllers
         }
         // GET: api/<BookingsController>
         [HttpGet]
-        public IEnumerable<Bookings> Get()
+        public async Task<IEnumerable<Bookings>> Get()
         {
-            return context.bookings.ToArray();
+            var bookings = context.bookings.ToArray();
+            var users = context.users.ToArray();
+            var rooms = context.rooms.ToArray();
+
+            foreach (var s in bookings)
+            {
+               s.user = users.Where(item => item.Id == s.user.Id).FirstOrDefault();
+               s.room = rooms.Where(item => item.Id == s.room.Id).FirstOrDefault();
+            }
+             
+            return bookings;
         }
 
         // GET api/<BookingsController>/5
         [HttpGet("{id}")]
         public Bookings Get(int id)
         {
+            context.rooms.ToArray();
+            context.users.ToArray();
             return context.bookings.Where(item => item.Id == id).FirstOrDefault();
         }
 

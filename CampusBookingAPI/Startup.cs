@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CampusBookingAPI.DbContextMysql;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace CampusBookingAPI
 {
@@ -32,6 +33,13 @@ namespace CampusBookingAPI
             services.AddDbContext<CampusApiDbContext>(options =>
            options.UseMySQL(
            Configuration.GetConnectionString("LocalDB")));
+        /*
+           services.AddMvc()
+        .AddNewtonsoftJson(
+          options => {
+              options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+          });*/
+
 
             services.AddCors(options =>
             {

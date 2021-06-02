@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace CampusBookingAPI.Migrations
 {
-    public partial class intilizeDb : Migration
+    public partial class InitilizeDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,14 +42,34 @@ namespace CampusBookingAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "rating",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    comment = table.Column<string>(type: "text", nullable: true),
+                    rating = table.Column<int>(type: "int", nullable: false),
+                    RoomsId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_rating", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_rating_rooms_RoomsId",
+                        column: x => x.RoomsId,
+                        principalTable: "rooms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "bookings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    timeStart = table.Column<DateTime>(type: "datetime", nullable: false),
-                    timeEnd = table.Column<DateTime>(type: "datetime", nullable: false),
+                    dateStart = table.Column<DateTime>(type: "datetime", nullable: false),
+                    dateEnd = table.Column<DateTime>(type: "datetime", nullable: false),
                     className = table.Column<string>(type: "text", nullable: true),
                     seatsBooked = table.Column<byte>(type: "tinyint unsigned", nullable: true),
                     roomId = table.Column<int>(type: "int", nullable: true),
@@ -72,34 +92,6 @@ namespace CampusBookingAPI.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "rating",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    comment = table.Column<string>(type: "text", nullable: true),
-                    rating = table.Column<int>(type: "int", nullable: false),
-                    RoomsId = table.Column<int>(type: "int", nullable: true),
-                    UsersId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_rating", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_rating_rooms_RoomsId",
-                        column: x => x.RoomsId,
-                        principalTable: "rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_rating_users_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_bookings_roomId",
                 table: "bookings",
@@ -114,11 +106,6 @@ namespace CampusBookingAPI.Migrations
                 name: "IX_rating_RoomsId",
                 table: "rating",
                 column: "RoomsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_rating_UsersId",
-                table: "rating",
-                column: "UsersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -130,10 +117,10 @@ namespace CampusBookingAPI.Migrations
                 name: "rating");
 
             migrationBuilder.DropTable(
-                name: "rooms");
+                name: "users");
 
             migrationBuilder.DropTable(
-                name: "users");
+                name: "rooms");
         }
     }
 }
