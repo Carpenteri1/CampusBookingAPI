@@ -47,8 +47,9 @@ namespace CampusBookingAPI.Controllers
 
         // POST api/<BookingsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(Bookings data)
         {
+            return Ok();
         }
 
         // PUT api/<BookingsController>/5

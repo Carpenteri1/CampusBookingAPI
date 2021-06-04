@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CampusBookingAPI.Migrations
 {
     [DbContext(typeof(CampusApiDbContext))]
-    [Migration("20210602175337_InitilizeDb")]
-    partial class InitilizeDb
+    [Migration("20210604135105_initlizedb")]
+    partial class initlizedb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,17 +28,17 @@ namespace CampusBookingAPI.Migrations
                     b.Property<string>("className")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("dateEnd")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("dateStart")
-                        .HasColumnType("datetime");
-
                     b.Property<int?>("roomId")
                         .HasColumnType("int");
 
                     b.Property<byte?>("seatsBooked")
                         .HasColumnType("tinyint unsigned");
+
+                    b.Property<DateTime>("timeEnd")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("timeStart")
+                        .HasColumnType("datetime");
 
                     b.Property<int?>("userId")
                         .HasColumnType("int");

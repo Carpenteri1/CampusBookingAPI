@@ -10,8 +10,8 @@ namespace CampusBookingAPI.Model
     {
         [Key]
         public int Id { get; set; }
-        public DateTime dateStart { set; get; }
-        public DateTime dateEnd { get; set; }
+        public DateTime timeStart { set; get; }
+        public DateTime timeEnd { get; set; }
 #nullable enable
         public string? className { get; set; }
         public byte? seatsBooked { get; set; }

@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace CampusBookingAPI.Migrations
 {
-    public partial class InitilizeDb : Migration
+    public partial class initlizedb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,8 +68,8 @@ namespace CampusBookingAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    dateStart = table.Column<DateTime>(type: "datetime", nullable: false),
-                    dateEnd = table.Column<DateTime>(type: "datetime", nullable: false),
+                    timeStart = table.Column<DateTime>(type: "datetime", nullable: false),
+                    timeEnd = table.Column<DateTime>(type: "datetime", nullable: false),
                     className = table.Column<string>(type: "text", nullable: true),
                     seatsBooked = table.Column<byte>(type: "tinyint unsigned", nullable: true),
                     roomId = table.Column<int>(type: "int", nullable: true),
