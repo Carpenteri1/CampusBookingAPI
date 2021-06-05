@@ -45,3 +45,4 @@ Students should have the ability to give feedback on what tools they want to hav
 ### Assets are from
 - [Font-awesome](https://fontawesome.com/)
 - [Bootstrap](https://getbootstrap.com/docs/4.0/utilities/flex/)
+- [Flaticon](https://www.flaticon.com/)
