@@ -25,8 +25,6 @@
       "CampusBookingAPI/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.15",
-          "Microsoft.EntityFrameworkCore": "5.0.6",
-          "Microsoft.EntityFrameworkCore.Design": "5.0.6",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.6",
           "MySql.EntityFrameworkCore": "5.0.3.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",

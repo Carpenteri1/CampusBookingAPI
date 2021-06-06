@@ -22,14 +22,19 @@ namespace CampusBookingAPI.Controllers
         [HttpGet]
         public IEnumerable<Rooms> Get()
         {
-            return context.rooms.ToArray();
+            var rooms = context.rooms.ToArray();
+            var comments = context.comments.ToArray();
+
+            return rooms;
         }
 
         // GET api/<RoomsController>/5
         [HttpGet("{id}")]
         public Rooms Get(int id)
         {
-            return context.rooms.Where(item => item.Id == id).FirstOrDefault();
+            var room = context.rooms.Where(item => item.Id == id).FirstOrDefault();
+            var comments = context.comments.ToArray();
+            return room;
         }
 
         // POST api/<RoomsController>

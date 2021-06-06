@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CampusBookingAPI.Model
 {
-    public class Ratings
+    public class Comments
     {
         [Key]
         public int Id { get; set; }

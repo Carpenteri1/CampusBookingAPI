@@ -18,6 +18,6 @@ namespace CampusBookingAPI.DbContextMysql
         public DbSet<Users> users { get; set; }
 
         public DbSet<Bookings> bookings { get; set; }
-        public DbSet<Ratings> rating { get; set; }
+        public DbSet<Comments> comments { get; set; }
     }
 }

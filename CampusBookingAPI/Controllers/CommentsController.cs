@@ -12,25 +12,28 @@ namespace CampusBookingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RatingController : ControllerBase
+    public class CommentsController : ControllerBase
     {
         private readonly CampusApiDbContext context;
-        public RatingController(CampusApiDbContext context)
+        public CommentsController(CampusApiDbContext context)
         {
             this.context = context;
         }
         // GET: api/<RatingController>
         [HttpGet]
-        public IEnumerable<Ratings> Get()
+        public IEnumerable<Comments> Get()
         {
-            return context.rating.ToArray();
+            var comments = context.comments.ToArray();
+            return comments;
         }
 
         // GET api/<RatingController>/5
         [HttpGet("{id}")]
-        public Ratings Get(int id)
+        public Comments Get(int id)
         {
-            return context.rating.Where(item => item.Id == id).FirstOrDefault();
+            context.rooms.ToArray();
+            context.users.ToArray();
+            return context.comments.Where(item => item.Id == id).FirstOrDefault();
         }
 
         // POST api/<RatingController>

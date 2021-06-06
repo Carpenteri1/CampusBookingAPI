@@ -14,5 +14,8 @@ namespace CampusBookingAPI.Model
         public string userName { get; set; }
         public string password { get; set; }
         public TypeOfAccount typeofAccount { get; set; }
+#nullable enable
+        public ICollection<Comments>? comments { get; set; }
+#nullable disable
     }
 }

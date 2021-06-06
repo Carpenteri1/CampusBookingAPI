@@ -18,7 +18,7 @@ namespace CampusBookingAPI.Model
 #nullable enable
         public string? equipment { get; set; }//what tools do the room have
         public string? description { get; set; }
-        public ICollection<Ratings>? Rating { get; set; }
+        public ICollection<Comments>? comments { get; set; }
 #nullable disable
     }
 }

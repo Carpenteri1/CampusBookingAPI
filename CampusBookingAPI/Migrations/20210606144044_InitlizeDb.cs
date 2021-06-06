@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace CampusBookingAPI.Migrations
 {
-    public partial class initlizedb : Migration
+    public partial class InitlizeDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,27 +42,6 @@ namespace CampusBookingAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "rating",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    comment = table.Column<string>(type: "text", nullable: true),
-                    rating = table.Column<int>(type: "int", nullable: false),
-                    RoomsId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_rating", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_rating_rooms_RoomsId",
-                        column: x => x.RoomsId,
-                        principalTable: "rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "bookings",
                 columns: table => new
                 {
@@ -92,6 +71,34 @@ namespace CampusBookingAPI.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "comments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    comment = table.Column<string>(type: "text", nullable: true),
+                    rating = table.Column<int>(type: "int", nullable: false),
+                    RoomsId = table.Column<int>(type: "int", nullable: true),
+                    UsersId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_comments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_comments_rooms_RoomsId",
+                        column: x => x.RoomsId,
+                        principalTable: "rooms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_comments_users_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_bookings_roomId",
                 table: "bookings",
@@ -103,9 +110,14 @@ namespace CampusBookingAPI.Migrations
                 column: "userId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_rating_RoomsId",
-                table: "rating",
+                name: "IX_comments_RoomsId",
+                table: "comments",
                 column: "RoomsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_comments_UsersId",
+                table: "comments",
+                column: "UsersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -114,13 +126,13 @@ namespace CampusBookingAPI.Migrations
                 name: "bookings");
 
             migrationBuilder.DropTable(
-                name: "rating");
-
-            migrationBuilder.DropTable(
-                name: "users");
+                name: "comments");
 
             migrationBuilder.DropTable(
                 name: "rooms");
+
+            migrationBuilder.DropTable(
+                name: "users");
         }
     }
 }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CampusBookingAPI.Migrations
 {
     [DbContext(typeof(CampusApiDbContext))]
-    [Migration("20210604135105_initlizedb")]
-    partial class initlizedb
+    [Migration("20210606144044_InitlizeDb")]
+    partial class InitlizeDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,13 +52,16 @@ namespace CampusBookingAPI.Migrations
                     b.ToTable("bookings");
                 });
 
-            modelBuilder.Entity("CampusBookingAPI.Model.Ratings", b =>
+            modelBuilder.Entity("CampusBookingAPI.Model.Comments", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int?>("RoomsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsersId")
                         .HasColumnType("int");
 
                     b.Property<string>("comment")
@@ -71,7 +74,9 @@ namespace CampusBookingAPI.Migrations
 
                     b.HasIndex("RoomsId");
 
-                    b.ToTable("rating");
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("comments");
                 });
 
             modelBuilder.Entity("CampusBookingAPI.Model.Rooms", b =>
@@ -138,16 +143,25 @@ namespace CampusBookingAPI.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("CampusBookingAPI.Model.Ratings", b =>
+            modelBuilder.Entity("CampusBookingAPI.Model.Comments", b =>
                 {
                     b.HasOne("CampusBookingAPI.Model.Rooms", null)
-                        .WithMany("Rating")
+                        .WithMany("comments")
                         .HasForeignKey("RoomsId");
+
+                    b.HasOne("CampusBookingAPI.Model.Users", null)
+                        .WithMany("comments")
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("CampusBookingAPI.Model.Rooms", b =>
                 {
-                    b.Navigation("Rating");
+                    b.Navigation("comments");
+                });
+
+            modelBuilder.Entity("CampusBookingAPI.Model.Users", b =>
+                {
+                    b.Navigation("comments");
                 });
 #pragma warning restore 612, 618
         }
