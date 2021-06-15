@@ -52,3 +52,5 @@ C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcorea
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\obj\Debug\netcoreapp3.1\CampusBookingAPI.csprojAssemblyReference.cache
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\nicla\source\repos\CampusBookingAPI\CampusBookingAPI\bin\Debug\netcoreapp3.1\System.Web.Http.dll

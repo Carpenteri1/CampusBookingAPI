@@ -7,11 +7,10 @@ namespace CampusBookingAPI.Service
 {
     public enum RoomType
     {
-        mötesrum,
-        grupprum,
-        grupprum_möterum,
-        lektionsal,
-        datorsal
-
+        Mötesrum,
+        Grupprum,
+        GruppMöte,
+        Lektionsal,
+        Datorsal
     }
 }

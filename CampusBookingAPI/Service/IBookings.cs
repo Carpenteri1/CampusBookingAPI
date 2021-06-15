@@ -1,26 +1,22 @@
-﻿using CampusBookingAPI.Service;
+﻿using CampusBookingAPI.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CampusBookingAPI.Model
+namespace CampusBookingAPI.Service
 {
-    public class Bookings : IBookings
+    public interface IBookings
     {
-        [Key]
         public int Id { get; set; }
         public DateTime timeStart { set; get; }
         public DateTime timeEnd { get; set; }
 #nullable enable
         public string? className { get; set; }
         public byte? seatsBooked { get; set; }
+        public Rooms? Room { get; set; }
+        public Users? user { get; set; }
 #nullable disable
-        public Rooms Room { get; set; }
-        public Users user { get; set; }
-
-
 
     }
 }

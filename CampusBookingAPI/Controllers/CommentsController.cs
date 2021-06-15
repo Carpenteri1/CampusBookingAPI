@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CampusBookingAPI.Controllers
@@ -33,25 +32,52 @@ namespace CampusBookingAPI.Controllers
         {
             context.rooms.ToArray();
             context.users.ToArray();
-            return context.comments.Where(item => item.Id == id).FirstOrDefault();
+            return context.comments.Where(item => item.id == id).FirstOrDefault();
         }
 
-        // POST api/<RatingController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("{id}")]
+        [Route("/{id}")]
+        public IActionResult Post([FromBody]Comments comments,[FromRoute] int id)
         {
+            if(id > 0)
+            {
+                try
+                {
+                    var room = context.rooms.Where(item => item.Id == id).FirstOrDefault();
+                    var user = context.users.Where(item => item.Id == 3).FirstOrDefault();
+                    context.comments.ToArray();
+                    room.comments.Add(comments);
+                    user.comments.Add(comments);
+                    context.SaveChanges();
+                    return Ok();
+                    
+                }
+                catch(Exception e)
+                {
+                    return NotFound(new { message = $"{e.Message}" });
+                }
+              
+            }
+             return NotFound(new { message = "Post was null" });
+
         }
 
-        // PUT api/<RatingController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        
+        public IActionResult Put([FromBody]Comments comments)
         {
+                try
+                {
+                   // comments.rating = comments.rating + 1;
+                    context.Update(comments);
+                    context.SaveChanges();
+                    return Ok();
+                }
+                catch(Exception e)
+                {
+                    return NotFound(new { message = $"{e.Message}" });
+                }
         }
 
-        // DELETE api/<RatingController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

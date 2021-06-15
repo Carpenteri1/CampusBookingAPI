@@ -21,34 +21,22 @@ namespace CampusBookingAPI.Controllers
         }
         // GET: api/<UsersController>
         [HttpGet]
-        public IEnumerable<Users> Get()
+        public IEnumerable<Users> GetAllUsers()
         {
             return context.users.ToArray();
         }
 
         // GET api/<UsersController>/5
-        [HttpGet("{id}")]
-        public Users Get(int id)
+        [HttpGet("id={id}")]
+        public Users GetUserById(int id)
         {
             return context.users.Where(item => item.Id == id).FirstOrDefault();
         }
-
-        // POST api/<UsersController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        // GET api/<UsersController>/5
+        [HttpGet("name={userName}")]
+        public Users GetUserByName(string userName)
         {
-        }
-
-        // PUT api/<UsersController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<UsersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return context.users.Where(item => item.userName == userName).FirstOrDefault();
         }
     }
 }

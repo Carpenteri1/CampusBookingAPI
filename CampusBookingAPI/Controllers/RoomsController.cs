@@ -20,39 +20,28 @@ namespace CampusBookingAPI.Controllers
         }
         // GET: api/<RoomsController>
         [HttpGet]
-        public IEnumerable<Rooms> Get()
+        public IEnumerable<Rooms> GetAllRooms()
         {
             var rooms = context.rooms.ToArray();
             var comments = context.comments.ToArray();
 
             return rooms;
         }
-
         // GET api/<RoomsController>/5
-        [HttpGet("{id}")]
-        public Rooms Get(int id)
+        [HttpGet("id={id}")]
+        public Rooms GetRoomById(int id)
         {
             var room = context.rooms.Where(item => item.Id == id).FirstOrDefault();
             var comments = context.comments.ToArray();
             return room;
         }
-
-        // POST api/<RoomsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        
+        [HttpGet("name={roomName}")]
+        public Rooms GetRoomByName(string roomName)
         {
-        }
-
-        // PUT api/<RoomsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<RoomsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var room = context.rooms.Where(item => item.roomName == roomName).FirstOrDefault();
+            var comments = context.comments.ToArray();
+            return room;
         }
     }
 }

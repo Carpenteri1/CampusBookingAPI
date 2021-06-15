@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using CampusBookingAPI.DbContextMysql;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace CampusBookingAPI
 {
@@ -30,16 +31,9 @@ namespace CampusBookingAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CampusApiDbContext>(options =>
+           services.AddDbContext<CampusApiDbContext>(options =>
            options.UseMySQL(
            Configuration.GetConnectionString("LocalDB")));
-        /*
-           services.AddMvc()
-        .AddNewtonsoftJson(
-          options => {
-              options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-          });*/
-
 
             services.AddCors(options =>
             {

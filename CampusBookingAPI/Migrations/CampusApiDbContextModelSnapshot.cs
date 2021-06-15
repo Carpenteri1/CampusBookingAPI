@@ -23,11 +23,11 @@ namespace CampusBookingAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
                     b.Property<string>("className")
                         .HasColumnType("text");
-
-                    b.Property<int?>("roomId")
-                        .HasColumnType("int");
 
                     b.Property<byte?>("seatsBooked")
                         .HasColumnType("tinyint unsigned");
@@ -43,7 +43,7 @@ namespace CampusBookingAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("roomId");
+                    b.HasIndex("RoomId");
 
                     b.HasIndex("userId");
 
@@ -56,10 +56,10 @@ namespace CampusBookingAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("RoomsId")
+                    b.Property<int>("RoomsId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsersId")
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
 
                     b.Property<string>("comment")
@@ -128,15 +128,15 @@ namespace CampusBookingAPI.Migrations
 
             modelBuilder.Entity("CampusBookingAPI.Model.Bookings", b =>
                 {
-                    b.HasOne("CampusBookingAPI.Model.Rooms", "room")
+                    b.HasOne("CampusBookingAPI.Model.Rooms", "Room")
                         .WithMany()
-                        .HasForeignKey("roomId");
+                        .HasForeignKey("RoomId");
 
                     b.HasOne("CampusBookingAPI.Model.Users", "user")
                         .WithMany()
                         .HasForeignKey("userId");
 
-                    b.Navigation("room");
+                    b.Navigation("Room");
 
                     b.Navigation("user");
                 });
@@ -145,11 +145,15 @@ namespace CampusBookingAPI.Migrations
                 {
                     b.HasOne("CampusBookingAPI.Model.Rooms", null)
                         .WithMany("comments")
-                        .HasForeignKey("RoomsId");
+                        .HasForeignKey("RoomsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CampusBookingAPI.Model.Users", null)
                         .WithMany("comments")
-                        .HasForeignKey("UsersId");
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CampusBookingAPI.Model.Rooms", b =>
